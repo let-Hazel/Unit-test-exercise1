@@ -1,51 +1,56 @@
 def factorial(n):
-    """Calculates the factorial of a non-negative integer."""
-    # TODO: Implement the logic
+    fact = 1
     for i in range(1, n+1):
         if n < 0:
             return "input positive number"
         if n == 0:
             return 1
- 
+        else:
+            fact *= i
+    return fact
 
-print(factorial(3))
+# print(factorial(3))
 
-# def fibonacci(n):
-#     """Returns the nth number in the Fibonacci sequence."""
-#      x = 0
-#      y = 1
-#     # TODO: Implement the logic
-#     return None
+def fibonacci(n):
+    """
+    fn = f(n-1)+ f(n-2)
+    """
+    if n < 0:
+        return "only positive integers"
 
-# def fizzbuzz(n):
-#     """
-#     Returns a list for the FizzBuzz game up to n.
-#     - Multiples of 3 are "Fizz"
-#     - Multiples of 5 are "Buzz"
-#     - Multiples of both 3 and 5 are "FizzBuzz"
-#     """
-#     # TODO: Implement the logic
-#     game = []
-#     # for i in range(n):  
-#     while n <= n:  
-#         if n%3==0 and n%5==0:
-#             i = "FizzBuzz"
 
-#         elif n%3==0:
-#             i = "Fizz"
+    seq = [0,1]
+    for i in range(2,n+1):
+        num = seq[i-1] + seq[i-2]
+        seq.append(num)
+        nth = seq[-1]
 
-#         elif n%5==0:
-#             i = "Buzz"
+    return nth, seq
+
+# print(fibonacci(6))
+    
+
+def fizzbuzz(n):
+    result = []
+    for i in range(1, n+1):  
+    # while n <= n:  
+        if i%3==0 and i%5==0:
+            result.append("FizzBuzz")
+
+        elif i%3==0:
+           result.append("Fizz")
+
+        elif i%5==0:
+            result.append("Buzz")
             
-#         else:
-#             i = n
+        else:
+            result.append(i) 
 
-#     game.append(i)
+    return result
 
-#     # return i
-
-#     return game
-# print(fizzbuzz(2))
+    # return i
+# fizzbuzz(3)
+# print(fizzbuzz(3))
 
 
 
