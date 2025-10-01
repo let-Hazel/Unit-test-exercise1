@@ -1,22 +1,30 @@
-# def factorial(n):
-#     fact = 1
-#     for i in range(1, n+1):
-#         if n < 0:
-#             return "input positive number"
-#         if n == 0:
-#             return 1
-#         else:
-#             fact *= i
-#     return fact
+def factorial(n):
+    fact = 1
 
-# # print(factorial(3))
+    try:
+        n = int(n)
+    except:
+        raise ValueError("n not an integer")
+    
+    for i in range(1, n+1):
+        if n < 0:
+            return "input positive number"
+        if n == 0:
+            return 1
+        else:
+            fact *= i
+    return fact
+
+# print(factorial(0))
 
 def fibonacci(n):
     """
     fn = f(n-1)+ f(n-2)
     """
-    if not n.isdigit():
-        raise ValueError or NameError
+    try:
+        n = int(n)
+    except:
+        raise ValueError("n not an integer")
     if n < 0:
         return "only positive integers"
     elif n == 1:
@@ -28,32 +36,37 @@ def fibonacci(n):
             seq.append(num)
             nth = seq[-1]
 
-    return nth, seq
+    return [nth, seq]
 
-print(fibonacci("p"))
+# print(fibonacci("p"))
     
 
-# def fizzbuzz(n):
-#     result = []
-#     for i in range(1, n+1):  
-#     # while n <= n:  
-#         if i%3==0 and i%5==0:
-#             result.append("FizzBuzz")
+def fizzbuzz(n):
+    result = []
+    # try:
+    #     n = int(n)
+    # except:
+    #     raise ValueError("n not an integer")
+    
+    for i in range(1, n+1):  
+    # while n <= n:  
+        if i%3==0 and i%5==0:
+            result.append("FizzBuzz")
 
-#         elif i%3==0:
-#            result.append("Fizz")
+        elif i%3==0:
+           result.append("Fizz")
 
-#         elif i%5==0:
-#             result.append("Buzz")
+        elif i%5==0:
+            result.append("Buzz")
             
-#         else:
-#             result.append(i) 
+        else:
+            result.append(i) 
 
-#     return result
+    return result
 
-#     # return i
-# # fizzbuzz(3)
-# # print(fizzbuzz(15))
+    # return i
+# fizzbuzz(3)
+# print(fizzbuzz(15))
 
 
 
